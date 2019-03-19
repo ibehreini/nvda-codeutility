@@ -7,7 +7,7 @@ import ui
 class AppModule(appModuleHandler.AppModule):
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-		if obj.windowClassName == "SysTreeView32":
+		if obj.windowClassName == "SWT_Window0" and obj.role == controlTypes.ROLE_EDITABLETEXT:
 			clsList.insert(0, EnhancedEditField)
 
 class EnhancedEditField(IAccessible):
