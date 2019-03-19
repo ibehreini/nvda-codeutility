@@ -7,7 +7,8 @@ import ui
 class AppModule(appModuleHandler.AppModule):
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-		clsList.insert(0, EnhancedEditField)
+		if obj.windowClassName == "SysTreeView32":
+			clsList.insert(0, EnhancedEditField)
 
 class EnhancedEditField(IAccessible):
 
